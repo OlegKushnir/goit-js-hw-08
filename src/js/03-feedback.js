@@ -14,6 +14,7 @@ function onFormSubmit(evt) {
     evt.currentTarget.reset();
     localStorage.removeItem(STORAGE_KEY);
     console.log(formData);
+    formData = {};
 };
 
 function onInput(evt) {
@@ -35,6 +36,7 @@ function addSavedText() {
         Object.entries(savedFeedback).forEach(([name, value]) => {
             formRef.elements[name].value = value;
         })
+        formData = savedFeedback;
     }
 }
 
